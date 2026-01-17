@@ -1,0 +1,45 @@
+@import url(./header.css);
+@import url(./main.css);
+@import url(./footer.css);
+@import url(./card.css);
+
+
+:root{
+    --font-roboto: "Roboto", sans-serif;
+    --color-blanco:whitesmoke;
+    --color-gris: #343434;
+    --color-negro:#000;
+    --color-fondo-dorado: #e6e68b;
+    --color-verde-metalico:#1bb733;
+    --color-contraste:#6775b3;
+	--color-sombra: rgba(149, 157, 165, 0.2);
+}
+
+html{
+	scroll-behavior: smooth;
+    font-family: var(--font-roboto);
+    background: var(--color-negro);
+    color: var(--color-blanco);
+    overflow-x:hidden;
+    font-size: 10px; /*Se establece font-size base*/
+
+    a {
+        text-decoration: none;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*como va a calcular el tamaño del elemento, en el width y height que le demos va a incluir a las medidas de su margin y padding*/
+}
+
+body {
+  width: 100%;
+  /* max-width: 100vw; */
+  overflow-x: hidden;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

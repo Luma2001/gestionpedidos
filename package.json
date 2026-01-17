@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^6.21.0",
+    "mongoose": "^8.21.0",
+    "nodemon": "^3.1.11"
+  },
+  "name": "gestorpedidos",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "reportes": "node microservices/reportes.js",
+    "notificaciones": "node microservices/notificaciones.js",
+    "dev": "concurrently -n \"API,Reportes,Notificaciones\" \"nodemon server.js\" \"nodemon microservices/reportes.js\" \"nodemon microservices/notificaciones.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/webp/luma.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <title>Gestión de Pedidos</title>
+</head>
+<body>
+    <header>
+       <img src="./images/webp/pedidoFTLB.png" width="300px" alt="Logo de Gestión de Pedidos"></i>
+    </header>
+    <main>
+
+    <!-- Formulario para crear un nuevo pedido -->
+        <h2>Nuevo Pedido</h2>
+        <form id="nuevoPedido">
+            <label for="para">Para (destino del pedido)</label>
+            <input 
+                type="text" 
+                id="para" 
+                placeholder="Ej.: supermercado, verduleria, carniceria, etc." 
+                required
+            >
+            <div id="productos">
+                <p>Agregar Producto</p>
+                <div id="nuevoProducto">
+                    <input 
+                        type="text" 
+                        id="nombre" 
+                        placeholder="Nombre del producto" 
+                        >
+                    <input 
+                        type="number" 
+                        id="cantidad" 
+                        placeholder="Cantidad" 
+                        >
+                    <select id="unidad">
+                        <option value="unidades" default>unidades</option>
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                        <option value="litros">litros</option>
+                        <option value="ml">ml</option>
+                        <option value="paquetes">paquetes</option>
+                        <option value="cajas">cajas</option>
+                    </select>
+                </div>
+                <button 
+                    id="btnAddProducto" 
+                    type="button" 
+                    onclick="agregarProducto()"
+                >➕ Agregar Producto
+                </button>
+            </div>
+            <section id="productosPedidos">
+                <h3>Productos en el pedido:</h3>
+                <ul id="productosDelPedido">
+                    <!-- Productos agregados al pedido se mostrarán aquí -->                     
+                </ul>
+                <div id="sin_productos" style="display: block; text-align:center;"> 
+                    <img src="./images/webp/sinProductos.png" alt="NO HAY PRODUCTOS AGREGADOS" style="max-width:100px; opacity: 0.2;">  
+                    <p>No hay productos agregados</p> 
+                </div>
+            </section>
+            
+            <button type="submit"><span>🛒</span> Crear Pedido</button>
+        </form>
+
+    <!-- Sección de pedidos creados -->
+        <section id="pedidosCreados">
+            <h2>Lista de Pedidos</h2>  
+            <div id="listaDePedidos">
+              <!-- Pedidos creados se mostrarán aquí -->               
+            </div>    
+            <div id="lista_vacia" style="display: none; text-align:center;"> 
+                <img src="./images/webp/cajaVacia.png" alt="NO HAY PEDIDOS CREADOS" style="max-width:200px; opacity: 0.2;"> 
+            </div>     
+        </section>
+
+    </main>
+    <footer>
+        <h2>Reportes</h2>
+        <div id="reportes">
+            <p>Total pedidos: <span id="total"></span></p>
+            <p>Pendientes: <span id="pendientes"></span></p>
+            <p>Finalizados: <span id="finalizados"></span></p>
+        </div>
+    </footer>  
+
+    <script src="app.js"></script>
+</body>
+</html>
