@@ -7,7 +7,10 @@ const app = express(); //creo servidor
 app.use(cors());
 app.use(express.json()); //middleware para parsear JSON
 
-mongoose.connect('mongodb+srv://lumaqui2001_db_user:yISyPhP4AEqypidH@logisticacluster.z72txom.mongodb.net/?appName=logisticaCluster')
+//Cargamos variables de entorno desde el archivo .env
+require("dotenv").config();
+
+mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("✅ Conectado a MongoDB Atlas desde Reportes"))
 .catch(err => console.error("❌ Error de conexión desde Reportes:", err));
 
